@@ -10750,25 +10750,4 @@ textarea.form-control-lg {
   background: linear-gradient(to right, rgba(164, 32, 216, 0.95), rgba(161, 48, 131, 0.95));
 }
 
-.main-theme {
-  background: linear-gradient(to right, rgba(164, 32, 216, 0.95), rgba(161, 48, 131, 0.95));
-}
-.main-theme li {
-  padding: 0 0.7rem;
-}
-.main-theme li a {
-  color: #fff !important;
-  text-transform: capitalize;
-  font-weight: 600;
-}
-
-h1 {
-  color: white;
-  font-weight: 500;
-}
-
-.thuziak {
-  color: white;
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=body.css.map */
