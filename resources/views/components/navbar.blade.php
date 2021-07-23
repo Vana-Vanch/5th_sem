@@ -11,10 +11,10 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             @auth
-            <a class="nav-link active" href="#">Dashboard</a>
+            <a class="nav-link active" href="{{ route('dashboard') }}">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">{{ Auth::user()->username }}</a>
+            <a class="nav-link active" href="{{ route('profile') }}">{{ Auth::user()->username }}</a>
           </li>
           <li class="nav-item">
             <form action="{{ route('logout') }}" method="POST">

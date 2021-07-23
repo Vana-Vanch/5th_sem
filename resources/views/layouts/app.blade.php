@@ -11,5 +11,11 @@
     @include('components.navbar')
     @yield('content')
     <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+       $('.ckeditor').ckeditor();
+    });
+    </script>
 </body>
 </html>
