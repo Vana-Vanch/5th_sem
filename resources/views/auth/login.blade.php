@@ -3,7 +3,8 @@
     <div class="container mt-5">
         <h1 class="text-center">Login</h1>
         <div class="w-50 m-auto">
-        <form class="mt-3 thuziak">
+        <form class="mt-3 thuziak" action="{{ route('login') }}" method="POST">
+          @csrf
             <div class="mb-3">
               <label for="email" class="form-label">Email address</label>
               <input type="email" class="form-control @error('email')
@@ -14,10 +15,10 @@
             @enderror
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control @error('password')
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" @error('password')
               border border-danger border-3 rounded-2
-              @enderror" id="exampleInputPassword1">
+              @enderror">
               @error('password')
               {{ $message }}
             @enderror

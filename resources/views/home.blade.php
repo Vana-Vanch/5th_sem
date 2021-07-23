@@ -1,5 +1,5 @@
 @extends('layouts.app')
 @section('content')
-Home
+<div class="continer-fluid bg-primary"></div>
     
 @endsection

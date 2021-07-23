@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark main-theme border-bottom border-light">
+<nav class="navbar navbar-expand-lg navbar-dark main-theme border-bottom border-light border-2">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">
         The Vana
