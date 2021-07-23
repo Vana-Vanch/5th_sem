@@ -7,17 +7,30 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" name="name">
-         
+                <input type="text" class="form-control @error('name')
+                border border-danger border-3 rounded-2
+                @enderror" name="name">
+                @error('name')
+                  {{ $message }}
+                @enderror
               </div>
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" name="username">
-         
+                <input type="text" class="form-control @error('username')
+                border border-danger border-3 rounded-2
+                @enderror" name="username">
+                @error('username')
+                {{ $message }}
+              @enderror
               </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+              <input type="email" class="form-control @error('email')
+              border border-danger border-3 rounded-2
+              @enderror" name="email" aria-describedby="emailHelp">
+              @error('email')
+              {{ $message }}
+            @enderror
             </div>
             <div class="mb-3">
               <label for="profilePicture" class="form-label">Profile Picture(Optional)</label>
@@ -27,7 +40,12 @@
             
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" name="password">
+              <input type="password" class="form-control @error('password')
+              border border-danger border-3 rounded-2
+              @enderror" name="password">
+              @error('password')
+              {{ $message }}
+            @enderror
             </div>
             <div class="mb-3">
                 <label for="password_confirmation" class="form-label">Confirm Password</label>

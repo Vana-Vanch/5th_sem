@@ -17,7 +17,11 @@
             <a class="nav-link active" href="#">{{ Auth::user()->username }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Logout</a>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <input type="submit" value="Logout">
+            </form>
+            
           </li>
           @else
           <li class="nav-item">
