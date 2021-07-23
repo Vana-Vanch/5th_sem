@@ -10771,4 +10771,12 @@ h1 {
   color: white;
 }
 
+.sei-zawng {
+  max-width: 540px;
+}
+
+.main-bg-profile {
+  background: linear-gradient(to right, rgba(164, 32, 216, 0.95), rgba(161, 48, 131, 0.95));
+}
+
 /*# sourceMappingURL=style.css.map */
