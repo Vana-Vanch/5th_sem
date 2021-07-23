@@ -11,7 +11,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'blog_image',
-        'body'
+        'body',
+       
     ];
 
 
