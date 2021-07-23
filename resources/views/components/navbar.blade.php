@@ -9,33 +9,33 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         @if (Route::has('login'))
         <ul class="navbar-nav">
-         
           <li class="nav-item">
             @auth
             <a class="nav-link active" href="#">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Profile</a>
+            <a class="nav-link active" href="#">{{ Auth::user()->username }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="#">Logout</a>
           </li>
           @else
           <li class="nav-item">
-            <a class="nav-link active" href="#">Login</a>
+            <a class="nav-link active" href="{{ route('login') }}">Login</a>
           </li>
           @if (Route::has('register'))
           <li class="nav-item">
-           
-            <a class="nav-link active" href="#">Register</a>
+            <a class="nav-link active" href="{{ route('register') }}">Register</a>
           </li>
          @endif
          @endauth
-         
-         
         </ul>
         @endif
-       
       </div>
     </div>
   </nav>
+         
+         
+           
+         
+       
