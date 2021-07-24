@@ -7,6 +7,16 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
+    public function index(){
+        return view('pages.create');
+    }
+
+
     public function store(Request $request){
         
         
@@ -25,14 +35,25 @@ class PostController extends Controller
                 'blog_image' => $new_file_name,
                 'body' => $request->body,
             ]);
-            return back();
+            return redirect()->route('dashboard');
                 
         }else{
             auth()->user()->post()->create([
                 'title' => $request->title,
                 'body' => $request->body,
             ]);
-            return back();
+            return redirect()->route('dashboard');
         }
+    }
+
+    public function show(Post $post){
+        return view('pages.detail', [
+            'post' => $post,
+        ]);
+    }
+
+    public function destroy(Post $post){
+        $post->delete();
+        return redirect()->route('dashboard');
     }
 }

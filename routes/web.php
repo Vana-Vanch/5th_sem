@@ -33,9 +33,16 @@ Route::post('/logout', [LogoutController::class, 'index'])->name('logout');
 //dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+
 //profile
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/profile/{user}/update', [ProfileController::class, 'create'])->name('profile.update');
+Route::put('/profile/{user}/update', [ProfileController::class, 'update'])->name('update');
+Route::delete('/profile/{user}', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
 //post
+Route::get('/dashboard/create', [PostController::class, 'index'])->name('post.create');
 Route::post('/post', [PostController::class, 'store'])->name('post');
+Route::get('/post/{post:title}/detail', [PostController::class, 'show'])->name('post.show'); 
+Route::delete('/post/{post}/delete', [PostController::class, 'destroy'])->name('post.destroy');

@@ -18,17 +18,22 @@
                 @endif
                         <div class="m-auto w-25 text-center mt-4">
                             <h3><i>{{ Auth::user()->name }}</i></h3>
+                            <h5><i>{{ Auth::user()->email }}</i></h5>
      
                             @if(Auth::user()->bio)
-                            <p>{{ Auth::user()->bio }}</p>
+                            <h4 class="mt-3">About</h4>
+                            <p>{!! Auth::user()->bio !!}</p>
                             @else
                             <h4 class="mt-3">About</h4>
                             <p>No bio</p>
                             @endif
                         </div>
-                        <div class="text-center">
-                               <a class="btn btn-success" href="">Edit Profile</a> 
-                               <a class="btn btn-info" href="">Delete Profile</a> 
+                        <div class="text-center d-flex justify-content-around w-25 m-auto">
+                               <a class="btn btn-success" href="{{ route('profile.update', Auth::user()) }}">Edit Profile</a> 
+                               <form action="{{ route('profile.destroy', Auth::user()) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Delete Profile" class="btn btn-info">
                         </div>
             </div>
         </div>
